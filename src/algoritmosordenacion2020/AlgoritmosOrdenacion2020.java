@@ -44,17 +44,17 @@ public class AlgoritmosOrdenacion2020 {
     public void shellSort(int[] numeros) {
         int salto, aux;
         boolean intercambio;
-        for (salto = numeros.length / 2; salto != 0; salto /= 2) {
+        for (salto = numeros.length / 2; salto != 0; salto /= 5.5) {
             intercambio = true;
-            while (intercambio) {
+            while (intercambio) {//mientras se intercambie algun elemento
                 intercambio = false;
-                for (int i = salto; i < numeros.length; i += salto) {
+                for (int i = salto; i < numeros.length; i += salto) {//se da una pasada
                     if (numeros[i - salto] > numeros[i]) {
                         //si los dos numeros estan desordenados entre si los intercambio y lo indico
-                        aux = numeros[i];
+                        aux = numeros[i];//se reordenan
                         numeros[i] = numeros[i - salto];
                         numeros[i - salto] = aux;
-                        intercambio = true;
+                        intercambio = true;//se marca como cambio
                     }
                 }
             }
